@@ -1,9 +1,11 @@
 require("./src/functions/MessageQuote")
+
+const Discord = require("discord.js")
 const cor = require("colors")
 const fs = require("fs")
 
+module.exports = (client) => {
 // Event Handler
-
 fs.readdir("./src/events/", (err, files) => {
     if(err)
         console.error(err);
@@ -15,13 +17,11 @@ fs.readdir("./src/events/", (err, files) => {
     })
     console.log(cor.brightCyan("[EVENTS] | Uploaded successfully"))
   });
-
 // Command Handler
-
 fs.readdirSync('./src/commands/').forEach(dir => {
     const files = fs.readdirSync(`./src/commands/${dir}/`).filter(file => file.split(".").pop() === "js")
     for (let file of files) {
-        let pull = require(`./commands/${dir}/${file}`);
+        let pull = require(`./src/commands/${dir}/${file}`);
         if (pull.help.name) {
             client.commands.set(pull.help.name, pull);  
         }
@@ -32,3 +32,5 @@ fs.readdirSync('./src/commands/').forEach(dir => {
         };
     };
 });
+
+}

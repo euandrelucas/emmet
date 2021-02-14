@@ -1,4 +1,4 @@
-# EmmetBot
+# Emmet | DiscordBot
 
 ```js
 const desc = "Hi, my name is emmet and i am a simple DiscordBot for help you discord-server"

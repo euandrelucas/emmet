@@ -5,5 +5,5 @@
 # CONFIDENCIAL
 
 src/config/json/config.json
+src/config/database/database.json
 src/config/database/giveaways.json
-

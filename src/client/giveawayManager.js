@@ -10,6 +10,7 @@ const manager = new GiveawaysManager(client, {
     default: {
         botsCanWin: false,
         embedColor: '#9999ff',
+        embedColorEnd: '#9999ff',
         reaction: '🎉'
     }
 });

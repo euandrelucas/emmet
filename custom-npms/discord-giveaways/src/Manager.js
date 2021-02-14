@@ -89,7 +89,7 @@ class GiveawaysManager extends EventEmitter {
             formattedWinners;
         const embed = new Discord.MessageEmbed();
         embed
-            .setAuthor(giveaway.prize)
+            .setAuthor("Emmet Giveaway | " + giveaway.prize, "https://images-ext-1.discordapp.net/external/j4fpIfERTpK5936-vz8cPS-CFtDU9K2K7pTXA54DhgE/https/images-ext-1.discordapp.net/external/PaV0fbA4nVXCX9whISA-1_eRuKxT2p8lUFRjKqZDXf0/%253Fsize%253D2048/https/cdn.discordapp.com/avatars/810509165344194560/a3306db23fcc12406c8c3279d8d7d2ed.png")
             .setColor(giveaway.embedColorEnd)
             .setFooter(giveaway.messages.endedAt)
             .setDescription(
@@ -109,7 +109,7 @@ class GiveawaysManager extends EventEmitter {
     generateNoValidParticipantsEndEmbed(giveaway) {
         const embed = new Discord.MessageEmbed();
         embed
-            .setAuthor(giveaway.prize)
+            .setAuthor("Emmet Giveaway | " + giveaway.prize, "https://images-ext-1.discordapp.net/external/j4fpIfERTpK5936-vz8cPS-CFtDU9K2K7pTXA54DhgE/https/images-ext-1.discordapp.net/external/PaV0fbA4nVXCX9whISA-1_eRuKxT2p8lUFRjKqZDXf0/%253Fsize%253D2048/https/cdn.discordapp.com/avatars/810509165344194560/a3306db23fcc12406c8c3279d8d7d2ed.png")
             .setColor(giveaway.embedColorEnd)
             .setFooter(giveaway.messages.endedAt)
             .setDescription(

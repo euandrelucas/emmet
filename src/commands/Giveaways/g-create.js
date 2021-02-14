@@ -24,6 +24,8 @@ exports.run = async (client, message, args) => {
                 collector.stop()
             })
 
+            giveaway.tempo = ms(message.content)
+
             if(step == 1) {
 
             message.react("✅").then(m => {
@@ -62,41 +64,39 @@ exports.run = async (client, message, args) => {
 
                         giveaway.winners = message.content
 
-                        message.react("✅").then(m4 => {
+                        message.react("✅").then(m5 => {
 
-                            const collector4 = message.channel.createMessageCollector(msg =>
-                                msg.member.id === message.member.id &&
-                                msg.channel.id === message.channel.id,
-                                { max: 1 }
-                            )
-                            
-                            collector4.on("collect", (message) => {
-                                
+                                    const collector5 = message.channel.createMessageCollector(msg =>
+                                        msg.member.id === message.member.id &&
+                                        msg.channel.id === message.channel.id,
+                                        { max: 1 }
+                                    )
+                                    
+                                    message.quote(`⏰ ${message.author} **|** Enter the prize`)
+                                    
+                                    collector5.on("collect", (message) => {
+                                        giveaway.prize = message.content
+                                        message.react("✅").then(mm => {
+                                            client.giveawaysManager.start(giveaway.canal, {
+                                                time: giveaway.tempo,
+                                                prize: giveaway.prize,
+                                                winnerCount: parseInt(giveaway.winners),
+                                                hostedBy: message.author
+                                            })
+                                        })
+                                    })
+
+                                })
+                                })
+
                             })
 
                         })
 
                     })
-
+                    }
                 })
-
-                })
-            })
-            
-            giveaway.tempo = ms(message.content)
-
-            }
-
-        })
-
-        /*
-        client.giveawaysManager.start(message.channel, {
-            time: ms(args[0]),
-            prize: args.slice(2).join(' '),
-            winnerCount: parseInt(args[1])
-        })
-        */
-};
+            };
 exports.help = {
   name: 'g-create',
   aliases: ['giveaway-create', 'g-c', 'giveaway-c', 'giveaway-start', 'g-start', 'g-setup', 'giveaway-setup', 'g-s'],

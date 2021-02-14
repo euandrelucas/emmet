@@ -1,0 +1,4 @@
+node_modules
+bot.js
+package-lock.json
+.DS_Store

@@ -1,0 +1,9 @@
+# INUTIL FOLDERS
+
+/node_modules
+
+# CONFIDENCIAL
+
+src/config/json/config.json
+src/config/database/giveaways.json
+

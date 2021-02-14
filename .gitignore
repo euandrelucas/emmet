@@ -2,8 +2,12 @@
 
 /node_modules
 
-# CONFIDENCIAL
+# CONFIDENCIAL FILES
 
 src/config/json/config.json
 src/config/database/database.json
 src/config/database/giveaways.json
+
+# INUTIL FILES
+
+package-lock.json
